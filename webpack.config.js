@@ -14,8 +14,10 @@ module.exports = {
         alias: {
             'vue$': 'vue/dist/vue.js',
             root: path.resolve(__dirname, 'public'),
+            script: path.resolve(__dirname, 'public/src/javascript'),
             comp: path.resolve(__dirname, 'public/src/javascript/components'),
             util: path.resolve(__dirname, 'public/src/javascript/util'),
+            script: path.resolve(__dirname, 'public/src/javascript'),
             modules: path.resolve(__dirname, 'public/src/javascript/modules')
         },
         extensions: ['.js', '.vue', '.json']
@@ -29,13 +31,14 @@ module.exports = {
     devtool: inProd ? 'cheap-source-map' : 'source-map',
     module: {
         rules: [
+            { test: /\.vue$/, loader: 'vue-loader' },
+            { test: /\.html$/, loader: 'raw-loader' },
+            { test: /\.json$/, loader: 'json-loader' },
             {
                 test: /\.js|\.jsx$/,
-                use: 'babel-loader',
-                include: path.resolve(__dirname, 'public')
+                include: path.resolve(__dirname, 'public'),
+                loader: 'babel-loader'
             },
-            { test: /\.html$/, use: 'raw-loader' },
-            { test: /\.json$/, use: 'json-loader' },
             {
                 test: /\.css$/,
                 loader: ExtractTextWebpackPlugin.extract({
@@ -50,7 +53,6 @@ module.exports = {
                     use: ['css-loader', 'less-loader']
                 })
             },
-            { test: /\.vue$/, use: 'vue-loader' },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url-loader',
