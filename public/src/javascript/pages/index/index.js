@@ -12,5 +12,8 @@ const vm = new Vue({
     el: '#app',
     template,
     router,
-    store
+    store,
+    modules: {
+        
+    }
 });
