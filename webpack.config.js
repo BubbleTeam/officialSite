@@ -14,6 +14,7 @@ module.exports = {
         alias: {
             'vue$': 'vue/dist/vue.js',
             root: path.resolve(__dirname, 'public'),
+            source: path.resolve(__dirname, 'public/src/'),
             script: path.resolve(__dirname, 'public/src/javascript'),
             comp: path.resolve(__dirname, 'public/src/javascript/components'),
             util: path.resolve(__dirname, 'public/src/javascript/util'),
