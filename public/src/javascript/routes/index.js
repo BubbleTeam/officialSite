@@ -1,6 +1,6 @@
 import VueRouter from 'vue-router';
 import Home from 'modules/home';
-import Articles from 'modules/articles';
+import Blog from 'modules/blog';
 
 const router = new VueRouter({
     routes: [
@@ -9,8 +9,8 @@ const router = new VueRouter({
             component: Home
         },
         {
-            path: '/articles',
-            component: Articles
+            path: '/blog',
+            component: Blog
         }
     ]
 });
