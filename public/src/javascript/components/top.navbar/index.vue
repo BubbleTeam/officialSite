@@ -38,18 +38,13 @@ export default {
 
 <style scoped lang="less">
 @height: 70px;
-@highlightColor: #FFAA51;
+@highlightColor: #6173E8;
 .m-header {
-    overflow: hidden;
-    width: 100%;
-    height: @height;
-    display: flex;
-    justify-content: space-between;
-    background: #222;
+    display: flex; overflow: hidden; justify-content: space-between;
+    width: 100%; height: @height;
+    background: #FFF; box-shadow: 0 0 5px #999;
     .logo {
-        width: 170px;
-        height: 50px;
-        margin: 10px 20px;
+        width: 170px; height: 50px; margin: 10px 20px;
         background: url('images/logo.png') no-repeat ~"0 0 / auto 50px";
     }
     .nav {
@@ -59,18 +54,14 @@ export default {
             float: left;
             margin: 0 20px;
             &.current a, &:hover a {
-                color: #FFF;
                 border-bottom: 5px solid @highlightColor;
+                color: @highlightColor; font-weight: bold;
             }
         }
         a {
             display: block;
-            height: @height;
-            padding: 0 15px;
-            font-size: 1.3rem;
-            line-height: @height;
-            font-weight: lighter;
-            color: #DDD;
+            height: @height; padding: 0 15px;
+            line-height: @height; font-weight: lighter; font-size: 1.3rem; color: #555;
         }
     }
 }
